@@ -1,0 +1,31 @@
+:root{--bg:#f3f5f9;--card:#fff;--ink:#16213a;--mute:#64708a;--line:#dde2ec;--pri:#1f4fd8;--pri2:#e8eefc;--ok:#0e7a4f;--okbg:#e4f5ec;--bad:#b3261e;--badbg:#fbe9e7;--warn:#9a5b00;--warnbg:#fff3d6}
+@media(prefers-color-scheme:dark){:root{--bg:#10151f;--card:#18202e;--ink:#e8ecf4;--mute:#97a3ba;--line:#2a3447;--pri:#7b9cff;--pri2:#202b47;--ok:#58d39b;--okbg:#14301f;--bad:#ff8f86;--badbg:#3a1d1b;--warn:#f0b455;--warnbg:#38290e}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 'Be Vietnam Pro',system-ui,sans-serif}
+a{color:var(--pri);cursor:pointer;text-decoration:none}a:hover{text-decoration:underline}
+header.top{display:flex;align-items:center;gap:16px;padding:12px 24px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+header.top b{font-size:17px}header.top .sp{flex:1}
+main{max-width:1060px;margin:24px auto;padding:0 16px}
+h1{font-size:22px;margin:0 0 16px}h2{font-size:17px;margin:28px 0 12px}h3{font-size:15px;margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.grow{flex:1;min-width:0}.mute{color:var(--mute);font-size:13px}
+input,select,textarea{font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:8px 10px;max-width:100%}
+textarea{width:100%;min-height:60px}input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--pri);outline-offset:1px}
+button{font:inherit;font-weight:600;border:1px solid var(--pri);background:var(--pri);color:#fff;border-radius:6px;padding:8px 14px;cursor:pointer}
+button.ghost{background:transparent;color:var(--pri)}button.danger{background:transparent;color:var(--bad);border-color:var(--bad)}button:disabled{opacity:.5;cursor:wait}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);font-size:14px}th{color:var(--mute);font-weight:500}
+.badge{display:inline-block;padding:1px 9px;border-radius:99px;font-size:12px;font-weight:600;background:var(--pri2);color:var(--pri)}
+.badge.ok{background:var(--okbg);color:var(--ok)}.badge.bad{background:var(--badbg);color:var(--bad)}.badge.warn{background:var(--warnbg);color:var(--warn)}
+.auth{max-width:380px;margin:9vh auto}.auth .card{display:grid;gap:10px}.tabs{display:flex;gap:4px;margin-bottom:8px}.tabs button{flex:1}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:12px}.stat b{display:block;font-size:26px}
+.bars{display:flex;gap:10px;align-items:flex-end;height:120px}.bars div{flex:1;text-align:center;font-size:12px}.bars i{display:block;background:var(--pri);border-radius:4px 4px 0 0;min-height:2px}
+.qrate{display:flex;gap:6px;flex-wrap:wrap}.qrate span{width:46px;text-align:center;border-radius:6px;padding:3px 0;font-size:12px;background:var(--pri2)}
+.qtext{white-space:pre-wrap}.opt{display:flex;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;margin:8px 0;cursor:pointer}
+.opt:hover{border-color:var(--pri)}.opt.sel{background:var(--pri2);border-color:var(--pri)}.opt.good{background:var(--okbg);border-color:var(--ok)}.opt.wrong{background:var(--badbg);border-color:var(--bad)}
+.exam{display:grid;grid-template-columns:230px 1fr;gap:16px}@media(max-width:760px){.exam{grid-template-columns:1fr}}
+.pal{position:sticky;top:70px;align-self:start}.pal .g{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.pal button{padding:6px 0;background:var(--card);color:var(--ink);border-color:var(--line)}.pal button.done{background:var(--pri2);border-color:var(--pri);color:var(--pri)}.pal button.cur{outline:2px solid var(--pri)}
+.timer{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}.timer.low{color:var(--bad)}
+.tfrow{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}.tfrow .st{flex:1}
+.tfrow label{display:flex;gap:4px;align-items:center;cursor:pointer}
+.crit{display:flex;gap:10px;align-items:center;padding:4px 0;font-size:14px}.crit input{width:70px}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:8px;display:none;z-index:99;max-width:90vw}
