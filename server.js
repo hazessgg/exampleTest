@@ -24,7 +24,21 @@ const auth = roles => (req, res, next) => {
 const T = auth(['teacher']), S = auth(['student']), ANY = auth();
 
 async function initDb() {
-  const cfg = { host: process.env.DB_HOST || 'localhost', user: process.env.DB_USER || 'root', password: process.env.DB_PASSWORD || '' };
+  const cfg = {
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT || 3306),
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME || 'defaultdb',
+  charset: 'utf8mb4',
+  waitForConnections: true,
+  connectionLimit: 10,
+
+  // Bật kết nối TLS
+  ssl: {
+    rejectUnauthorized: false
+  }
+};
   const name = process.env.DB_NAME || 'auto_exam';
   const boot = await mysql.createConnection(cfg);
   await boot.query(`CREATE DATABASE IF NOT EXISTS \`${name}\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`);
